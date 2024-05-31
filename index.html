@@ -9,26 +9,31 @@
 
         <script>
         $(document).ready(function() {
+            if ($(".container").length === 0) {
+                $("<div class='container'></div>").appendTo("body");
+            }
+
             $(".nav-link").on("click", function(event) {
                 event.preventDefault();
                 var targetId = $(this).attr("href");
-                $(targetId).hide();
-                if ($(".container").length === 0) {
-                    $("<div class='container'></div>").appendTo("body");
-                }
-                $(".container").empty().append($(targetId).show());
+                $(".container").children().hide();
+                $(targetId).appendTo(".container").show();
+            });
+            
+            $(".nav-link[href='#main']").on("click", function(event) {
+                event.preventDefault();
+                $(".container").children().show();
             });
         });
-
-
         </script>
+        
         <style>
         body {margin: 0; background-color: #F5F5F5;}
         li {list-style-type: none;}
         a{text-decoration-line: none; color: #0275d8;}
         a.nav-link[href="#main"] {color: white;}
         .bar {width: 100%; height: 50px; background-color: #05A69D; color:white; font-weight: bold; font-size: 24px; line-height: 50px; text-align: center;}
-        .container {margin: 20px auto; width: 1000px; background-color: white; border: 1px solid #CCCCCC; border-radius: 5px;}
+        .container {margin: 20px auto; width: 1000px; height: 100%; background-color: white; border: 1px solid #CCCCCC; border-radius: 5px;}
         .index {display: inline-block; margin: 20px; width: 300px; border: 1px solid #CCCCCC;}
         .index p {margin: 20px; font-size: 20px;}
         .box, .list{width: 1000px; margin-top: 50px; display: inline-block; font-size: 15px;}
