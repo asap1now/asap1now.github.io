@@ -4,28 +4,21 @@
         <title>크누위키</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge; chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <script>
-$(document).ready(function() {
-  $(".nav-link").on("click", function(event) {
-    event.preventDefault(); // 기본 앵커 동작을 막음
-    
-    // 클릭된 링크의 href 값을 가져와서 해당 ID를 가진 요소를 숨김
-    var targetId = $(this).attr("href");
-    $(targetId).hide();
-    
-    // container 요소가 존재하지 않으면 생성하고 추가
-    if ($(".container").length === 0) {
-      $("<div class='container'></div>").appendTo("body");
-    }
-    
-    // 기존 container 요소의 내용을 비우고 클릭된 링크의 href 값을 가진 요소를 표시
-    $(".container").empty().append($(targetId).show()); 
-    
-  });
-});
+        $(document).ready(function() {
+            $(".nav-link").on("click", function(event) {
+                event.preventDefault();
+                var targetId = $(this).attr("href");
+                $(targetId).hide();
+                if ($(".container").length === 0) {
+                    $("<div class='container'></div>").appendTo("body");
+                }
+                $(".container").empty().append($(targetId).show());
+            });
+        });
 
 
         </script>
@@ -51,6 +44,21 @@ $(document).ready(function() {
         #doc, #music, #youtube {width: 960px; margin: 20px; table-layout: fixed;}
         th, td {padding: 10px 25px 10px 25px; border-width: 0 0 1px; border-color: #DDDDDD; text-align: center;}
         td {font-weight: bold;}
+
+        @media (max-width: 768px) {
+            .container, .index, .box {width: calc(100% - 40px);}
+            #doc, #music, #youtube {width: calc(100% - 40px);margin: 20px auto;}
+            #profile {width: calc(100% - 40px);}
+            img {max-width: 100%; height: auto;}
+            table {
+        font-size: 12px; /* 더 작은 화면 크기에 대비하여 텍스트 크기 조정 */
+    }
+
+    th, td {
+        padding: 6px 10px; /* 더 작은 화면 크기에 대비하여 셀 크기 조정 */
+    }
+        }
+
         </style>
     </head>
     <body>
