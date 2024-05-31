@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>크누위키</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge; chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+$(document).ready(function() {
+  $(".nav-link").on("click", function(event) {
+    event.preventDefault(); // 기본 앵커 동작을 막음
+    
+    // 클릭된 링크의 href 값을 가져와서 해당 ID를 가진 요소를 숨김
+    var targetId = $(this).attr("href");
+    $(targetId).hide();
+    
+    // container 요소가 존재하지 않으면 생성하고 추가
+    if ($(".container").length === 0) {
+      $("<div class='container'></div>").appendTo("body");
+    }
+    
+    // 기존 container 요소의 내용을 비우고 클릭된 링크의 href 값을 가진 요소를 표시
+    $(".container").empty().append($(targetId).show()); 
+    
+  });
+});
+
+
+        </script>
+        <style>
+        body {margin: 0; background-color: #F5F5F5;}
+        li {list-style-type: none;}
+        a{text-decoration-line: none; color: #0275d8;}
+        a.nav-link[href="#main"] {color: white;}
+        .bar {width: 100%; height: 50px; background-color: #05A69D; color:white; font-weight: bold; font-size: 24px; line-height: 50px; text-align: center;}
+        .container {margin: 20px auto; width: 1000px; background-color: white; border: 1px solid #CCCCCC; border-radius: 5px;}
+        .index {display: inline-block; margin: 20px; width: 300px; border: 1px solid #CCCCCC;}
+        .index p {margin: 20px; font-size: 20px;}
+        .box, .list{width: 1000px; margin-top: 50px; display: inline-block; font-size: 15px;}
+        .box li {margin: 20px 0 0 20px; font-weight: bold;}
+        .box p {margin: 0 20px 0 20px;}
+        .box :first-child {margin: 20px; font-weight: bold; font-size: 27px; border-bottom: 1px solid #CCCCCC; padding-bottom: 10px;}
+        #iba, #ibb, #ibc, #ibd, #ida, #idb, #idc, #idd {margin: 20px; font-weight: bold; font-size: 24px; border-bottom: 1px solid #CCCCCC; padding-bottom: 10px;}
+        .title {margin: 20px 0 0 20px; font-weight: bold; font-size: 36px;}
+        .subtitle {margin: 0 0 0 20px; color: gray; font-size: 14.4px;}
+        th {background-color : #C60067; color: white;}
+        table {margin: 0 20px 0 0; border-spacing: 0px; border-width: 2px; border: solid #C60067; font-size: 15px;}
+        #profile {float:right;}
+        #doc, #music, #youtube {width: 960px; margin: 20px; table-layout: fixed;}
+        th, td {padding: 10px 25px 10px 25px; border-width: 0 0 1px; border-color: #DDDDDD; text-align: center;}
+        td {font-weight: bold;}
+        </style>
+    </head>
+    <body>
+        <div class="bar">
+            <a class="nav-link" href="#main">크누위키</a>
+        </div>
+        <div class="container">
+            <div class="title">김성빈</div>
+            <div class="subtitle">태어난 날짜: 2002년 10월 10일</div>
+            <table id="doc" border="1">
+                <tr>
+                    <th>음악</th>
+                    <td><a class="nav-link" href="#playlist" >플레이리스트</a></td>
+                </tr>
+                <tr>
+                    <th>유튜브</th>
+                    <td><a class="nav-link" href="#subscribe">구독 채널</a></td>
+                </tr>
+            </table>
+            <div class="index">
+                <p>목차</p>
+                <ol>
+                    <li><a href="#ia">1.</a>개요</li>
+                    <li><a href="#ib">2.</a>활동
+                        <ol>
+                            <li><a href="#iba">2.1.</a>초등학교</li>
+                            <li><a href="#ibb">2.1.</a>중학교</li>
+                            <li><a href="#ibc">2.1.</a>고등학교</li>
+                            <li><a href="#ibd">2.1.</a>대학교</li>
+                        </ol>
+                    </li>
+                    <li><a href="#ic">3.</a>스포츠</li>
+                    <li><a href="#id">4.</a>캐릭터
+                        <ol>
+                            <li><a href="#ida">4.1.</a>성격</li>
+                            <li><a href="#idb">4.2.</a>취향</li>
+                            <li><a href="#idc">4.3.</a>습관</li>
+                            <li><a href="#idd">4.4.</a>건강</li>
+                        </ol>
+                    </li>
+                    <li><a href="#ie">5.</a>논란 및 사건 사고</li>
+                    <li><a href="#if">6.</a>여담</li>
+                </ol>
+            </div>
+            <table id="profile" border="1">
+                <tr>
+                    <th colspan="2">김성빈</th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihbqwYahBmOqqG-NlB4N-fbW3tHhTGQ_3g_ZdZ8b7_4ZVmS6D5jBRniDa-HJlhTtToSh0atLQskDc5eMt0x702-1bSCedV6x8bo=w2880-h1546-rw-v1" width="400">
+                    </th>
+                </tr>
+                <tr>
+                    <th>본명</th>
+                    <td>김성빈(金成彬, Kim seong-bin)</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">출생</th>
+                    <td>2002년 10월 10일 (21세)</td>
+                </tr>
+                <tr>
+                    <td>경기도 수원시 팔달구 인계동</td>
+                </tr>
+                <tr>
+                    <th>국적</th>
+                    <td>대한민국</td>
+                </tr>
+                <tr>
+                    <th>본관</th>
+                    <td>김해 김씨 (金海 金氏)</td>
+                </tr>
+                <tr>
+                    <th>신체</th>
+                    <td>165cm, O형</td>
+                </tr>
+                <tr>
+                    <th>병역</th>
+                    <td>제50보병사단 정보통신대대</td>
+                </tr>
+                <tr>
+                    <th>가족</th>
+                    <td>부모님, 형</td>
+                </tr>
+                <tr>
+                    <th rowspan="5">학력</th>
+                    <td>삼호서초등학교(전학)</td>
+                </tr>
+                <tr>
+                    <td>옥암초등학교(졸업)</td>
+                </tr>
+                <tr>
+                    <td>옥암중학교(졸업)</td>
+                </tr>
+                <tr>
+                    <td>목상고등학교(졸업)</td>
+                </tr>
+                <tr>
+                    <td>강원대학교(재학)</td>
+                </tr>
+                <tr>
+                    <th>MBTI</th>
+                    <td>INTJ</td>
+                </tr>
+            </table>
+            <div class="box">
+                <p id="ia">1. 개요</p>
+                <p>대한민국의 평범한 20대 대학생.</p>
+            </div>
+            <div class="box">
+                <p id="ib">2. 활동</p>
+                <p id="iba">2.1. 초등학교</p>
+                <li>• 런닝맨</li>
+                <p>말 그대로 런닝맨의 이름표 떼기 게임을 학교 운동장에서 한 적이 있다.</p>
+                <li>• 독서마라톤 대회</li>
+                <p>도청에서 개최한 독서마라톤 대회에 나가서 은상을 수여받았다. 초등학생, 중학생이 참가 할 수 있는 대회였고 금상은 중학생이 받았다고 한다.</p>
+                <p id="ibb">2.2. 중학교</p>
+                <li>• 축구 클럽</li>
+                <p>반티도 축구복으로 맞추고 뽕이 차올라서인지 축구화를 사고나서 주말에 축구하러 간간히 나가곤 했다.</p>
+                <li>• 교내 교회 모임</li>
+                <p>어디서 온 건지 학교 사람은 아닌데 교내에 계시는 아저씨 한 분이 계셨다. 점심 시간에 10분만 예배와 하나님에 관한 이야기를 듣고 나면 간식을 주셨는데 가끔 가던게 정기적으로 변해서 모임이 되었다. 반년 정도 모임에 나가다가 관뒀는데 반년동안은 진심으로 기도했다고 한다.</p>
+                <p id="ibc">2.3. 고등학교</p>
+                <li>• 과학중점반</li>
+                <p>과제연구로 여러 종류의 식물에서 제초제의 성분을 추출하여 효과를 비교 분석하는 실험을 진행했었다.</p>
+                <li>• 동아리 활동</li>
+                <p>C언어 동아리 "#include"</p>
+                <p id="ibd">2.4. 대학교</p>
+                <li>• 동아리 활동</li>
+                <p>컴퓨터공학과 동아리 "블랜딩" 2021~</p>
+                <p>보드게임 동아리 "강원랜드마크" 2023년 1학기</p>
+                <p>3d 프린팅 동아리 "뚝딱" 2023년 2학기</p>
+                <li>• 아르바이트</li>
+                <p>춘향 2023년 2학기 中 1달</p>
+                <p>스타디움 pc방 2023년 2학기</p>
+                <p>세븐일레븐 2024년 1학기</p>
+            </div>
+            <div class="box">
+                <p id="ic">3. 스포츠</p>
+                <li>• 축구</li>
+                <p>팀에 뚜렷한 스트라이커가 다수 포진해 있다면 윙백이나 풀백, 그렇지 않다면 미드필더로 활동한다. 골기퍼도 가끔 한다.</p>
+                <li>• 피구</li>
+                <p>피하는 것만 잘한다.</p>
+                <li>• 야구</li>
+                <p>던지는 것도 치는 것도 잘하지 못한다.</p>
+                <li>• 볼링</li>
+                <p>처음에는 60~80점 대에서 머물렀지만 이제는 80~120점 사이의 점수가 안정적으로 나오고 120점 이상도 가끔 나오기도 한다. 현재까지 최고 점수는 147점이다.</p>
+                <li>• 당구</li>
+                <p>포켓볼만 간신히 칠 수 있다.</p>
+                <li>• 수영</li>
+                <p>초등학교 때 반년동안 수영을 배워서 자유형과 배영을 할 줄 안다. 당시 1~2살 더 많은 형들보다 빠르게 수영할 수 있었다. 이사를 가게 되서 그만뒀는데 더 배웠으면 접영, 평형도 했었을지도 모르겠다. 지금도 가끔 수영을 하러 가기도 하고 본가에 입주민 전용 수영장이 존재한다.</p>
+                <li>• 리그오브레전드</li>
+                <p>시즌 9 이전에는 정해진 라인 없이 게임을 했으며, 시즌 9 부터는 본격적으로 미드라이너로 활동한다. 그러다가 2023년에 돌연 탑 라이너 선언을 하고 1년 뒤 다시 미드 라이너로 포지션을 변경했다. 현재는 주 포지션은 미드, 부 포지션은 서폿으로 랭크게임을 플레이 하고 있다.</p>
+                <li>• 배틀그라운드</li>
+                <p>처음 출시 했을 때 바로 스팀 버전을 구입하여 플레이했었다. 그 당시에는 3~4킬은 기본으로 하고 치킨(1위)도 하루에 2~3번은 했는데 지금은 1킬 하면 다행인 수준이다.</p>
+                <li>• 스타크래프트</li>
+                <p>아버지가 하는 것을 옆에서 구경하면서 초등학생때부터 했지만 놀랍게도 래더는 전패이고 CPU도 1명을 간신히 이기는 수준이다.</p>
+                <li>• 카트라이더</li>
+                <p>허구한 날 리타이어 하다가 캠페인 맵을 몇개 클리어 하고나서 부터는 왠만하면 리타이어는 하지 않고 1등도 가끔씩 한다.</p>
+            </div>
+            <div class="box">
+                <p id="id">4. 캐릭터</p>
+                <p id="ida">4.1. 성격</p>
+                <p>친해지기 전에는 말이 없다가 친해지면 말이 많아져서 원래 이렇게 말이 많았었냐는 소리를 듣고는 한다.</p>
+                <p id="idb">4.2. 취향</p>
+                <li>• 음식</li>
+                <p>불닭볶음면을 먹으면 땀이 줄줄 나온다. 처음에는 쿨피스랑 같이 먹는데도 30분 넘게 걸렸다. 본인에게는 엄청 맵지만 맛은 있다고 생각한다.</p><br>
+                <p>진라면 순한 맛도 맛있게 먹는다.</p><br>
+                <p>제일 처음 접한 햄버거 가게가 롯데리아기 때문에 롯데리아에 대한 거부감이 딱히 없다.</p><br>
+                <p>한때 뿌링클을 좋아했지만 지금은 후라이드를 제일 좋아한다.</p><br>
+                <p>휴게소나 학교 급식에 나오는 돈까스만 먹어서 사람들이 돈까스를 왜 좋아하는지 몰랐었는데 일식 돈까스집에서 돈까스를 먹어보고 나서 돈까스를 좋아하게 되었다.</p><br>
+                <li>• 음악</li>
+                <p>신나는 댄스 곡이나 팝송을 좋아한다.</p><br>
+                <p>술을 잘 안 마시기 때문에 술 관련된 노래는 듣지 않는다.</p><br>
+                <p>J POP은 거의 듣지 않는다.</p><br>
+                <p id="idc">4.3. 습관</p>
+                <p>어릴 때 손톱을 물어뜯는 습관이 있었다. 지금은 남들처럼 손톱깎이를 이용한다.</p><br>
+                <p>옆으로 누워 잘때 배게 아래에 손을 넣고 자는 습관이 있다.</p><br>
+                <p>양치 하고 나서 물 한잔을 마시는 습관이 있다.</p>
+                <p id="idd">4.4. 건강</p>
+                <li>• 열 감기</li>
+                <p>초등학교 때 부터 1년에 최소 한 번은 2~3일 동안 앓는 열 감기를 걸리곤 했었다. 성인이 된 지금은 괜찮아진 상태지만 고등학생 때에도 열 감기 때문에 조퇴를 했었다. 초등학교 때는 열 감기를 시험기간에 걸려서 시험을 못 치르고 넘어간 적이 있다.</p>
+                <li>• 시력</li>
+                <p>초등학교 때 까지만 해도 안경을 안 쓸 정도로 시력이 좋았지만 중학교에 들어가면서 급격히 왼쪽 눈의 시력이 떨어졌다. 오른쪽 눈은 여전히 정상시력이라 자연스럽게 양쪽 시력 차이가 많이 나는 부동시가 되었다.</p>
+                <li>• 비염</li>
+                <p>라면 같은 뜨거운 음식만 먹으면 콧물이 나오긴 하지만 평소 생활할때는 멀쩡하고 가끔 심해지면 코에 통증을 느낀다.</p>
+            </div>
+            <div class="box">
+                <p id="ie">5. 논란 및 사건 사고</p>
+                <li>• 학원버스사고</li>
+                <p>중학생 때 초록불이 들어와서 횡단보도를 자전거를 타고 건너려는데 학원버스가 출발해서 부딪히는 사고가 발생했다. 엄청 느려보였는데도 자전거랑 본인 몸이 날라가는 거 보고 깜짝 놀랐지만 몸에 큰 이상은 없었다.</p>
+                <li>• 대상관모욕죄</li>
+                <p>군대 훈련병 시절에 옆 생활관에서 한 허위 제보로 인해 생활관 내의 전 인원이 진술서를 작성했다. 당연히 부 분대장을 모욕한 사람이 없으니 진술서에 범인이 나올리가 없었고 하지도 않은 일로 인해 분대장 조교한테 쌍욕을 들어야만 했다.</p>
+                <li>• 그린캠프</li>
+                <p>상병때 후임이 근무 바꿔달라는 말에 다른 사람한테 물어보고 나서 물어보라고 한 마디 했다가 기분이 나빠진건지 전우병 걸음 안 맞추고 혼자 빨리 가서 뭐라고 했더니 행보관실에서 울고 있었다. 사건 이후 본인과 후임은 진술서를 쓴 뒤 후임은 그린캠프로 갔다.</p>
+            </div>
+            <div class="box">
+                <p id="if">6. 여담</p>
+                <p>초등학교 때 물고기 잡는 대회에서 경품으로 사탕이 담긴 병을 받았는데 여름이라 집에 이동하는 동안 사탕끼리 달라붙어서 먹을 수 없게 된 적이 있다.</p><br>
+                <p>중학교 때 친구랑 버거킹에 갔다가 경품 추첨 뽑아보라고 해서 뽑았는데 3등이 당첨되서 그 자리에서 버거세트를 공짜로 받은 적이 있다.</p><br>
+                <p>헌혈을 하고 나면 힘이 빠지고 어지러움을 느낄 때가 있어서 요즘은 헌혈을 하지 않는다고 한다. 헌혈하고 다음날 앓아누운 적이 있다.</p><br>
+                <p>대상관모욕죄 사건 때 농담이 아니라 실제로 쌍욕을 들었다. 안 했다고 하는데 범인으로 단정 짓는게 어이가 없었다고 한다.</p><br>
+                <p>중학생 때 자전거를 잠궈놨음에도 불구하고 자물쇠마저 잘라가서 자전거를 도둑 맞은 적이 있다.</p>
+            </div>
+        </div>
+        <div id="playlist" style="display:none;">
+            <div class="title">플레이리스트</div>
+            <table id="music" border="1">
+                <tr>
+                    <th>Rothy</th>
+                    <td>Stars</td>
+                    <th>QWER </th>
+                    <td>고민중독</td>
+                    <th>백아</th>
+                    <td>첫사랑</td>
+                    <th>Heize</th>
+                    <td>And July</td>
+                    <td>비도 오고 그래서</td><td>헤픈 우연</td>
+                </tr>
+                <tr>
+                    <th>딘</th>
+                    <td>instagram</td>
+                    <th>DAY6</th>
+                    <td>예뻤어</td>
+                    <td>한 페이지가 될 수 있게</td>
+                    <th>IU</th>
+                    <td>금요일에 만나요</td>
+                    <td>밤편지</td>
+                    <td>Blueming</td>
+                    <td>삐삐</td>
+                </tr>
+                <tr>
+                    <th>혁오</th>
+                    <td>위잉위잉</td>
+                    <th>New Jeans</th>
+                    <td>Attention</td>
+                    <td>Ditto</td>
+                    <td>Hype Boy</td>
+                    <th>버즈</th>
+                    <td>나에게로 떠나는 여행</td>
+                    <th>백예린</th>
+                    <td>Bye bye my blue</td>
+                </tr>
+                <tr>
+                    <th>IVE</th>
+                    <td>ELEVEN</td>
+                    <td>LOVE DIVE</td>
+                    <td>Off The Record</td>
+                    <th>STAYC</th>
+                    <td>Poppy</td>
+                    <td>Bubble</td>
+                    <td>ASAP</td>
+                    <th>벡아연</th>
+                    <td>이럴거면 그러지말지</td>
+                </tr>
+            </table>
+          </div>
+        
+          <div id="subscribe" style="display:none;">
+            <div class="title">구독 중인 채널</div>
+            <table id="youtube" border="1">
+                <tr>
+                    <th><img src="https://yt3.googleusercontent.com/ytc/AIdro_nS0rgqjkxQTSDqhYgpzp9FvBzlxnReQ4FOXFn8pL16NyI=s176-c-k-c0x00ffffff-no-rj"></src></th>
+                    <th><img src="https://yt3.googleusercontent.com/FmxZkGyu8p9bBT774Owjr3A2GNfBQofKZi_yBss5bFMvyhP9RJlFTYCrwcvONxQZ6sVvvJjriQ=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/C7bTHnoo1S_MRbJXn4VwncNpB87C2aioJC_sKvgM-CGw_xgdxwiz0EFEqzj0SRVz6An2h81T4Q=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/Q5NILve5GWBbdJV7lf6NArRHjvhd9ZoeTFWfbkPGB94jdrlQBw9xjciX3jrgJ1pjxh3wXFZIag=s176-c-k-c0x00ffffff-no-rj"></th>
+                </tr>
+                <tr>
+                    <td>비디오머그</td>
+                    <td>비긴어게인</td>
+                    <td>침착맨</td>
+                    <td>사우스 코리안 파크</td>
+                </tr>
+                <tr>
+                    <th><img src="https://yt3.googleusercontent.com/ytc/AIdro_l3IU6711Ae_FuslHgP5zdxkuvLyoGx_8sESS9je5iO2C0=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/ytc/AIdro_n-akx3DuElq2Bk8q-vpRhpfdwUgOvxmUyOMwD78bu-8w=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/x8wFp1vdQm6eYdsw6_mA85YQrkVmn7IGARKAv3loTSye_ZouDlsY9GJb81fig7BRnJqD7P64xg=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/C_0OHZguUQdv8RM1U_75xVbObbQuuHoLiZA8xfg8dZSg201YO6ZxIeVk8xruKGTzM0VQ8vuk=s176-c-k-c0x00ffffff-no-rj"></th>
+                </tr>
+                <tr>
+                    <td>슈카월드</td>
+                    <td>WLDO</td>
+                    <td>14F 일사에프</td>
+                    <td>크랩 KLAB</td>
+                </tr>
+                <tr>
+                    <th><img src="https://yt3.googleusercontent.com/CofF_cxxEhy3kOmcA1hnzEfeaN8nQHU59DsPsbf-9kXGlr9kDFaAij8sg_l_SQiAxrWe4XYM3VE=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/GtuOoDHYfe7gdTb2EMNcuRnK_XWsO208o03ICNQbAOw2vMz575Mdkma8W4gqo_nKD3iCmqI8gCs=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/ytc/AIdro_m_jM2BgFSdHOjkVBIa_LZRa2fmxGProuJbzXmXqIXYgnM=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/ytc/AIdro_kYZqA59U-0x8LWMmnyCqaa7IKchWGx7psQnkMGmipqlg=s176-c-k-c0x00ffffff-no-rj"></th>
+                </tr>
+                <tr>
+                    <td>소탐대실</td>
+                    <td>셜록현준</td>
+                    <td>지식해적단</td>
+                    <td>pood</td>
+                </tr>
+                <tr>
+                    <th><img src="https://yt3.googleusercontent.com/fm20iirArjtnCBu_vFjNlR87991BsH5MKlVEYPWstlT6XnCqMrgOaSgeQm9ovJGEx9h6qSDI2w=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/ytc/AIdro_kutxZhVtnH4nWcW7ebuDER5TfHwPZJaqGyBVGjVC52A0A=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/BgVyANZEzp8nuJBi6et6nZpgWkHXDM7n4iGYOValGvO2-_gCdFopyR6Z1UjWrpvFRYsLkKuULSo=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/Uw0urMZ4YtoAWJvgkgXUNY4gSo49yEVG1ylGR2MLb4k861fwv-eQuXTEjlzAD4qqrRgiXFSZnQ=s176-c-k-c0x00ffffff-no-rj"></th>
+                </tr>
+                <tr>
+                    <td>행복지수 103%</td>
+                    <td>ITSub잇섭</td>
+                    <td>혜리</td>
+                    <td>채널십오야</td>
+                </tr>
+                <tr>
+                    <th><img src="https://yt3.googleusercontent.com/KaKkJzwxszwPq9I4wGpdVgHMXVOYEQ5kE_7W4uKIKLCt8oBIZbDEOWc4oUykFuw13d3luHmaXKc=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/K-pv54AhA522aZ6Y3kCBAnm1lELzYBk3kdty0btdqJz_sGw84QSADGWMzm9WL_d99FakKxM9=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <th><img src="https://yt3.googleusercontent.com/ytc/AIdro_mbWDhKvz2Dh1JXFORlMPqeuV7J-jJmCDg5bllEvDkCw4w=s176-c-k-c0x00ffffff-no-rj"></th>
+                    <td><img src="https://yt3.googleusercontent.com/xdwNn5wI-XpaLK5NVvpVk7uqO36xph4xV714vcJ1k354BbxlQL2WO4JeCE_zaBvtbA9C5QKT8A=s176-c-k-c0x00ffffff-no-rj"></td>
+                </tr>
+                <tr>
+                    <td>QWER</td>
+                    <td>한눈에 보는 세상 – Kurzgesagt</td>
+                    <td>1분미만</td>
+                    <td>LCK</td>
+                </tr>
+            </table>
+          </div>
+    </body>
+</html>
