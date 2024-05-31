@@ -18,11 +18,17 @@
                 var targetId = $(this).attr("href");
                 $(".container").children().hide();
                 $(targetId).appendTo(".container").show();
+                
+                // "크누위키"를 클릭했을 때
+                if (targetId === "#main") {
+                    $("#music, #youtube").hide(); // 플레이리스트와 구독 채널 숨기기
+                }
             });
             
             $(".nav-link[href='#main']").on("click", function(event) {
                 event.preventDefault();
                 $(".container").children().show();
+                $("#music, #youtube").hide(); // 플레이리스트와 구독 채널 숨기기
             });
         });
         </script>
